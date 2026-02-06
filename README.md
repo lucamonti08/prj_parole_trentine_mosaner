@@ -81,6 +81,9 @@ Il progetto prevede possibili evoluzioni:
 - montibeller.luca@buonarroti.tn.it
 - samuel.mosaner@buonarroti.tn.it
 
+## Figma
+https://www.figma.com/site/2RS9dV4VSdvVVsU6ED1aDR/ParoleTrentine?node-id=20-2&t=96fGi9ZoMeCGUCeg-1
+
 ## Licenza
 
 Le fotografie sono utilizzate con il permesso del Museo Etnografico Trentino San Michele.  
