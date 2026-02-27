@@ -88,3 +88,6 @@ https://www.figma.com/site/2RS9dV4VSdvVVsU6ED1aDR/ParoleTrentine?node-id=20-2&t=
 
 Le fotografie sono utilizzate con il permesso del Museo Etnografico Trentino San Michele.  
 Le immagini generate sono prive di copyright grazie a Gemini Nano Banana Pro.
+
+
+## Next steps
