@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parole Trentine</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font da Google: Playfair Display per i titoli, Lato per il testo normale -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1 class="title">PAROLE TRENTINE</h1>
+    <nav class="nav-links">
+      <a href="#">Cronologia</a>
+      <a href="#">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- BARRA MENU -->
+  <div class="barra-menu">
+
+    <!-- Logo e nome del team -->
+    <div class="team">
+      <span class="nome">GLS TEAM</span>
+    </div>
+
+    <div class="menu-bottoni">
+      <button class="btn-dizionario attivo">DIZIONARIO</button>
+      <button class="btn-progetto">PROGETTO</button>
+    </div>
+
+  </div>
+
+  <main class="main">
+
+    <div class="intro">
+      <h2>Traduci in dialetto trentino</h2>
+      <p>Scrivi una parola in italiano per trovarne la traduzione nel dialetto locale.</p>
+    </div>
+
+    <!-- div del traduttore -->
+    <div class="traduttore">
+
+      <div class="casella">
+        <div class="lingua">Italiano</div>
+        <textarea class="testo" placeholder="Scrivi qui in italiano..."></textarea>
+        <!-- Bottone per ascoltare la pronuncia italiana -->
+        <button class="btn-audio">🔊 Ascolta</button>
+      </div>
+
+      <!-- Bottone centrale per invertire le lingue -->
+      <button class="btn-inverti" title="Inverti lingue">⇄</button>
+
+      <!-- Casella DESTRA: output in dialetto -->
+      <div class="casella">
+        <div class="lingua">Dialetto Trentino</div>
+        <!-- Questa textarea è di sola lettura (mostra la traduzione) -->
+        <textarea class="testo" placeholder="La traduzione apparirà qui..." readonly></textarea>
+        <!-- Bottone per ascoltare la pronuncia in dialetto -->
+        <button class="btn-audio">🔊 Ascolta</button>
+      </div>
+
+    </div>
+
+    <!-- Bottone principale per avviare la traduzione -->
+    <button class="btn-traduci">TRADUCI</button>
+
+    <!-- ===== SEZIONE RICERCA AVANZATA ===== -->
+    <div class="sezione-ricerca">
+      <h3>Oppure cerca nel dizionario</h3>
+
+      <!-- Barra di ricerca con campo testo e bottone cerca -->
+      <div class="barra-ricerca">
+        <input type="text" class="campo-ricerca" placeholder="Cerca una parola...">
+        <button class="btn-cerca">Cerca</button>
+      </div>
+
+
+    <!-- ===== ESEMPIO DI RISULTATO (placeholder visivo) ===== -->
+    <div class="esempio-risultato">
+      <h3>Esempio di risultato</h3>
+
+      <!-- Scheda di una parola del dizionario -->
+      <div class="scheda-parola">
+        <!-- Parola principale in dialetto -->
+        <div class="parola-titolo">
+          <span class="parola-dialetto"></span>
+          <span class="parola-genere"></span> <!-- f. = femminile -->
+          <button class="btn-audio-piccolo">🔊</button>
+        </div>
+
+        <!-- Traduzione in italiano -->
+        <div class="parola-traduzione"></div>
+
+        <!-- Esempio d'uso in dialetto con traduzione -->
+        <div class="parola-esempio">
+          <em></em>
+          <span class="esempio-traduzione"></span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER: informazioni in fondo alla pagina ===== -->
+  <footer>
+
+    <!-- Colonna sinistra: nome e descrizione del sito -->
+    <div class="footer-sinistra">
+      <h3>Parole Trentine</h3>
+      <p>Dizionario ufficiale del<br>dialetto trentino</p>
+    </div>
+
+    <!-- Colonna centrale: link utili -->
+    <div class="footer-centro">
+      <h3>Link Utili</h3>
+      <ul>
+        <li><a href="#">Dizionario</a></li>
+        <li><a href="#">Il Progetto</a></li>
+        <li><a href="#">Galleria Foto</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonna destra: contatti -->
+    <div class="footer-destra">
+      <h3>Contatti</h3>
+      <p>Per informazioni e segnalazioni<br>contattaci via email</p>
+      <a href="mailto:info@paroletrentine.it" class="footer-email">info@paroletrentine.it</a>
+    </div>
+
+  </footer>
+
+</body>
+</html>
