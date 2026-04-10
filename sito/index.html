@@ -2,71 +2,244 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Parole Trentine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Trentin - Dizionario del dialetto di Trento</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>PAROLE TRENTINE</h1>
 
-    <nav class="opzioni">
-      <a href="#">Cronologia</a>
-      <a href="#">Contact</a>
+  <header>
+
+    <div class="header_titolo">
+      <h1 class="title">e - Trentin</h1>
+      <p class="sottotitolo">Dizionario del dialetto di Trento on line</p>
+    </div>
+
+    <nav class="barra-nav">
+      <a href="index.html" class="link attivo">HOME</a> <!--pagina attiva-->
+      <a href="progetto.html" class="link">IL PROGETTO</a>
+      <a href="chisiamo.html" class="link">CHI SIAMO</a>
     </nav>
+
   </header>
 
-  <div class="barraMenu">
+  <main class="main">
 
-    <div class="subBarraMenu">
-      <div class="logo"></div>
-  
-      <div class="text">
-        <div class="name">GLS TEAM</div>
-      </div>
-    </div>
-  
-    <div class="buttons">
-      <button class="btn1">DIZIONARIO</button>
-      <button class="btn2">PROGETTO</button>
+    <section class="sezione_cerca" id="cerca">
 
-    </div>
-  
-  </div>
+      <!-- Titolo e sottotitolo della sezione cerca -->
+      <h2 class="cerca_titolo">Cerca una parola</h2>
+      <p class="cerca_sottotitolo">Ricerca bidirezionale: dialetto ↔ italiano</p>
 
-    <div class="translatorContainer">
-
-      <div class="box">
-        <div class="label">Italiano</div>
-        <textarea placeholder="Scrivi..."></textarea>
-
+      
+      <div class="direzione_ricerca">
+        <!-- Radio button per scegliere la direzione della traduzione -->
+        <label class="radio_label">
+          <input type="radio" name="direzione" value="dial-ita" checked>
+          Dialetto → Italiano
+        </label>
+        <label class="radio_label">
+          <input type="radio" name="direzione" value="ita-dial">
+          Italiano → Dialetto
+        </label>
       </div>
 
-      <button class="changeBtn">CAMBIA</button>
+      <!-- Barra di ricerca: campo testo + bottone CERCA -->
+      <div class="barra_ricerca">
+        <input type="text" class="campo_ricerca" id="campoCerca" placeholder="Scrivi una parola...">
+        <button class="btn_cerca">CERCA</button>
+      </div>
 
-      <div class="box">
-        <div class="label">dialetto trentino</div>
-        <textarea></textarea>
+      <div class="filtri_categoria">
+        <span class="filtri_label">Filtra per:</span>
+        <button class="filtro attivo" >Tutti</button>  <!-- Bottone "Tutti" attivo di default -->
+        <button class="filtro" >sm</button>
+        <button class="filtro" >sf</button>
+        <button class="filtro" >np</button>
+        <button class="filtro">vb</button>
+        <button class="filtro" >avv</button>
+        <button class="filtro" >agg</button>
+        <button class="filtro" >prep</button>
+        <button class="filtro">escl</button>
+      </div>
+
+      <div class="filtri_alfabeto">
+        <!-- Ogni span è una lettera cliccabile dell'alfabeto -->
+        <span class="lettera" >A</span>
+        <span class="lettera" >B</span>
+        <span class="lettera" >C</span>
+        <span class="lettera">D</span>
+        <span class="lettera">E</span>
+        <span class="lettera">F</span>
+        <span class="lettera">G</span>
+        <span class="lettera" >H</span>
+        <span class="lettera" >I</span>
+        <span class="lettera">L</span>
+        <span class="lettera" >M</span>
+        <span class="lettera" >N</span>
+        <span class="lettera" >O</span>
+        <span class="lettera">P</span>
+        <span class="lettera" >R</span>
+        <span class="lettera">S</span>
+        <span class="lettera" >T</span>
+        <span class="lettera">U</span>
+        <span class="lettera">V</span>
+        <span class="lettera">Z</span>
+      </div>
+
+    
+      <!-- div dove appariranno i risultati della ricerca -->
+      <div class="risultati" id="risultati"></div>
+
+    </section>
+
+    <section class="sezione-parola-giorno" id="parola-giorno">
+
+      <h2 class="sezione_titolo">La Parola del Giorno</h2>
+      <div class="div_parolaGiorno">
+        <!-- Parola in dialetto, in grande (popolata da JS) -->
+        <div class="parola" id="parolaGiorno">tòsa</div>
+        <!-- Categoria grammaticale -->
+        <div class="parola_categoria" id="categoriaGiorno">sf. – sostantivo femminile</div>
+        <!-- Significato in italiano -->
+        <div class="parola_significato" id="significatoGiorno">ragazza, giovane donna</div>
+        <!-- Esempio d'uso con traduzione -->
+        <div class="parola_esempio" id="esempioPaG">
+          <em>"La tòsa la cantava en bel"</em>
+          <span class="esempio">→ "La ragazza cantava bene"</span>
+        </div>
+        <!-- Bottone pronuncia audio -->
+        <button class="btn_audioGiorno">Ascolta la pronuncia</button>
+      </div>
+
+    </section>
+
+
+    <section class="sezione_numeri" id="numeri">
+
+      <h2 class="sezione_titolo">I Numeri del Dizionario</h2>
+
+      <!-- Griglia con statistiche: ogni cella ha un numero e un'etichetta -->
+      <div class="griglia_numeri">
+
+        <div class="numero_card">
+          <div class="numero_valore">3.200</div>
+          <div class="numero_label">Lemmi totali</div>
+        </div>
+
+        <div class="numero_card">
+          <div class="numero_valore">1.450</div>
+          <div class="numero_label">Sostantivi</div>
+        </div>
+
+        <div class="numero_card">
+          <div class="numero_valore">820</div>
+          <div class="numero_label">Verbi</div>
+        </div>
+
+        <div class="numero_card">
+          <div class="numero_valore">430</div>
+          <div class="numero_label">Aggettivi</div>
+        </div>
+
+        <div class="numero_card">
+          <div class="numero_valore">180</div>
+          <div class="numero_label">Avverbi</div>
+        </div>
+
+        <div class="numero_card">
+          <div class="numero_valore">320</div>
+          <div class="numero_label">Espressioni</div>
+        </div>
 
       </div>
 
-      <button class="translateBtn">TRADUCI</button>
-
-    </div>
+    </section>
 
 
-  <!-- FOOTER -->
+    <section class="sezione_popolari" id="piu-cercate">
+
+      <h2 class="sezione_titolo">Le Parole più Cercate</h2>
+
+      <div class="parole_popolari">
+        <span class="tag_parola" >tòsa</span>
+        <span class="tag_parola" >boca</span>
+        <span class="tag_parola" >mas-cio</span>
+        <span class="tag_parola" >aga</span>
+        <span class="tag_parola">stua</span>
+        <span class="tag_parola" >laòrar</span>
+        <span class="tag_parola" >magnar</span>
+        <span class="tag_parola" >ciòco</span>
+      </div>
+
+    </section>
+
+    <section class="sezione_link" id="link">
+
+      <h2 class="sezione_titolo">Link Utili</h2>
+
+      <div class="griglia_link">
+        <a href="https://lessicotrentino.lett.unitn.it/fmi/webd/Lemma?homeurl=https://www.unitn.it/" class="link_card" target="_blank">
+          <div class="link_nome">Lessico trentino</div>
+          <div class="link_desc">Università di Trento</div>
+        </a>
+
+        <a href="https://alpilink.it/progetto/" class="link_card" target="_blank">
+          <div class="link_nome">AlpiLinK</div>
+          <div class="link_desc">Lingue alpine in contatto</div>
+        </a>
+
+        <a href="https://alpilink.it/progetto/" class="link_card" target="_blank">
+          <div class="link_nome">Diaolin</div>
+          <div class="link_desc">dizionario di Aldo Aneggi</div>
+        </a>
+
+        <a href="https://www.instagram.com/dialet.dictionary/?hl=it" class="link_card" target="_blank">
+          <div class="link_nome">Dialet Dictionary</div>
+          <div class="link_desc">Account Instagram</div>
+        </a>
+
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
   <footer>
-    <div class="footer-left">
-      <h3>Parole trentine</h3>
-      <p>Dizionario ufficiale del<br>dialetto trentino</p>
+
+    <div class="footer_col">
+      <h3 class="footer_titolo">e - Trentin</h3>
+      <p>Dizionario del dialetto di Trento on line</p>
+      <p class="footer_note">Un progetto culturale per conservare<br>e valorizzare il patrimonio linguistico trentino.</p>
     </div>
 
-    <div class="footer-right">
-      <h3>Contatti</h3>
+    <div class="footer_col">
+      <h3 class="footer_titolo">Navigazione</h3>
+      <ul class="footer_lista">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="progetto.html">Il Progetto</a></li>
+        <li><a href="chisiamo.html">Chi Siamo</a></li>
+      </ul>
     </div>
+
+    <div class="footer_col">
+      <h3 class="footer_titolo">Contatti</h3>
+      <p>Per informazioni, segnalazioni<br>o suggerire nuove parole:</p>
+      <a href="mailto:emailProva@gmail.com" class="footer_email">emailProva@gmail.com</a>
+    </div>
+
+    <div class="footer_col">
+      <h3 class="footer_titolo">Con il supporto di</h3>
+      <div class="loghi">
+        <div class="logo_placeholder">Logo 1</div>
+        <div class="logo_placeholder">Logo 2</div>
+        <div class="logo_placeholder">Logo 3</div>
+      </div>
+    </div>
+
   </footer>
 
-</body>
-</html>
+  

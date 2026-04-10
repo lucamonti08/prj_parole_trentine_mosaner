@@ -1,0 +1,632 @@
+/* =====================================================
+   VARIABILI COLORI
+   Palette ispirata alla bandiera del Comune di Trento:
+   blu e oro su sfondo chiaro neutro
+   ===================================================== */
+:root {
+  --blu:          #003DA5;   /* blu principale (bandiera Trento) */
+  --blu-scuro:    #002a72;   /* blu scuro per hover */
+  --oro:          #C8A951;   /* oro/giallo della bandiera */
+  --bianco:       #ffffff;
+  --grigio-bg:    #f4f6f9;   /* sfondo generale della pagina */
+  --grigio-card:  #eef0f5;   /* sfondo delle card e sezioni */
+  --grigio-bordo: #d0d7e2;   /* colore dei bordi */
+  --testo:        #4a4a4a;   /* testo normale */
+  --testo-scuro:  #1a1a2e;   /* testo titoli */
+  --raggio:       12px;      /* arrotondamento angoli (design senza spigoli) */
+}
+
+/* =====================================================
+   RESET BASE
+   Azzera margini e padding del browser; imposta
+   box-sizing così il padding non altera le dimensioni
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BODY
+   Font principale, colore di sfondo e colore testo
+   ===================================================== */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--grigio-bg);
+  color: var(--testo);
+  line-height: 1.6;
+}
+
+/* =====================================================
+   HEADER
+   Barra in cima: titolo + sottotitolo a sinistra,
+   navigazione HOME / IL PROGETTO / CHI SIAMO a destra
+   ===================================================== */
+header {
+  background-color: var(--blu);
+  color: var(--bianco);
+  padding: 20px 40px;
+  display: flex;                  /* affianca titolo e nav */
+  justify-content: space-between; /* uno a sinistra, uno a destra */
+  align-items: center;
+  gap: 20px;
+}
+
+/* Blocco titolo + sottotitolo */
+.header_titolo {
+  display: flex;
+  flex-direction: column; /* titolo sopra, sottotitolo sotto */
+  gap: 4px;
+}
+
+/* Titolo principale "e-Trentin" */
+.title {
+  font-family: 'Playfair Display', serif; /* font elegante per il titolo */
+  font-size: 2rem;
+  color: var(--oro);              /* oro per il titolo */
+  letter-spacing: 2px;
+}
+
+/* Sottotitolo: "Dizionario del dialetto di Trento on line" */
+.sottotitolo {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.85); /* bianco leggermente trasparente */
+  font-style: italic;
+}
+
+/* Navigazione principale con le tre voci in evidenza */
+.barra-nav {
+  display: flex;
+  gap: 8px;                    
+}
+
+/* Ogni link di navigazione */
+.link{
+  padding: 8px 18px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 20px;            /* bordi a pillola */
+  color: var(--bianco);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.2s;           /* animazione morbida al hover */
+}
+
+/* Voce attiva (pagina corrente): sfondo oro */
+.link.attivo {
+  background-color: var(--oro);
+  border-color: var(--oro);
+  color: var(--testo-scuro);
+}
+
+/* Hover sui link non attivi */
+.link:hover:not(.attivo) {
+  background-color: rgba(255,255,255,0.15);
+  border-color: var(--bianco);
+}
+
+/* =====================================================
+   MAIN
+   Contenitore centrale con larghezza massima e centrato
+   ===================================================== */
+.main {
+  max-width: 900px;
+  margin: 0 auto;         /* centra orizzontalmente */
+  padding: 40px 20px;     /* spazio interno, con margine sui lati */
+  display: flex;
+  flex-direction: column; /* sezioni impilate verticalmente */
+  gap: 48px;              /* spazio tra le sezioni */
+}
+
+/* =====================================================
+   TITOLO SEZIONE
+   Stile condiviso per tutti i titoli h2 delle sezioni
+   ===================================================== */
+.sezione_titolo {
+  font-family: 'Playfair Display', serif;
+  font-size:2rem;
+  color: var(--testo-scuro);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  /* Linea decorativa sotto il titolo */
+  border-bottom: 3px solid var(--oro);
+  display: inline-block;
+}
+
+/* =====================================================
+   SEZIONE CERCA
+   La sezione più importante: barra di ricerca,
+   filtri categoria e filtro alfabetico
+   ===================================================== */
+.sezione_cerca {
+  background-color: var(--bianco);
+  border-radius: var(--raggio);
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 61, 165, 0.10); /* ombra blu leggera */
+}
+
+/* Titolo "Cerca una parola" */
+.cerca_titolo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: var(--testo-scuro);
+  margin-bottom: 4px;
+}
+
+/* Sottotitolo della sezione cerca */
+.cerca_sottotitolo {
+  color: var(--testo);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* Contenitore dei radio button per la direzione di ricerca */
+.direzione_ricerca {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+/* Singolo radio button con etichetta */
+.radio_label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--blu);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Barra di ricerca: campo testo + bottone CERCA affiancati */
+.barra_ricerca {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Campo testo di ricerca */
+.campo_ricerca {
+  flex: 1;                        /* occupa tutto lo spazio disponibile */
+  padding: 14px 18px;
+  border: 2px solid var(--grigio-bordo);
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Quando il campo è selezionato, bordo diventa blu */
+.campo_ricerca:focus {
+  border-color: var(--blu);
+}
+
+/* Bottone CERCA */
+.btn_cerca {
+  padding: 14px 24px;
+  background-color: var(--blu);
+  color: var(--bianco);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;            /* impedisce che il testo vada a capo */
+}
+
+.btn_cerca:hover {
+  background-color: var(--blu-scuro);
+}
+
+
+.filtri_categoria {
+  display: flex;
+  flex-wrap: wrap;                /* va a capo se necessario */
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* Etichetta "Filtra per:" davanti ai bottoni */
+.filtri_label {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--testo);
+  margin-right: 4px;
+}
+
+/* Singolo bottone filtro categoria */
+.filtro {
+  padding: 5px 14px;
+  border: 2px solid var(--grigio-bordo);
+  border-radius: 20px;            /* forma a pillola */
+  background-color: var(--bianco);
+  color: var(--testo);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+/* Bottone filtro attivo */
+.filtro.attivo {
+  background-color: var(--blu);
+  color: var(--bianco);
+  border-color: var(--blu);
+}
+
+.filtro:hover:not(.attivo) {
+  border-color: var(--blu);
+  color: var(--blu);
+}
+
+/* ----------------------------------------------------------
+   FILTRI ALFABETICI
+   Griglia di lettere cliccabili per filtrare per iniziale
+   ---------------------------------------------------------- */
+.filtri_alfabeto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* Singola lettera dell'alfabeto */
+.lettera {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--grigio-bordo);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--blu);
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;              /* impedisce la selezione testo al click */
+}
+
+.lettera:hover {
+  background-color: var(--blu);
+  color: var(--bianco);
+  border-color: var(--blu);
+}
+
+/* Lettera attualmente selezionata */
+.lettera.attiva {
+  background-color: var(--oro);
+  color: var(--testo-scuro);
+  border-color: var(--oro);
+}
+
+/* ----------------------------------------------------------
+   AREA RISULTATI
+   Dove appaiono le schede con i risultati della ricerca
+   ---------------------------------------------------------- */
+.risultati {
+  min-height: 40px;               /* altezza minima anche quando vuota */
+}
+
+/* Messaggio generico nell'area risultati */
+.msg-ricerca {
+  color: var(--testo);
+  font-style: italic;
+  padding: 12px 0;
+}
+
+/* Messaggio di errore (campo vuoto ecc.) */
+.msg-errore {
+  color: #c0392b;                 /* rosso per gli errori */
+  font-weight: 700;
+  padding: 12px 0;
+}
+
+/* Scheda di un singolo risultato */
+.scheda-risultato {
+  border-left: 5px solid var(--oro); /* linea oro a sinistra */
+  background-color: var(--grigio-card);
+  border-radius: var(--raggio);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Parola principale nel risultato */
+.ris-parola {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--blu);
+}
+
+/* Categoria grammaticale nel risultato */
+.ris-categoria {
+  font-size: 0.8rem;
+  color: var(--testo);
+  font-style: italic;
+}
+
+/* Traduzione in italiano nel risultato */
+.ris-traduzione {
+  font-weight: 700;
+  color: var(--testo-scuro);
+}
+
+/* Esempio d'uso nel risultato */
+.ris-esempio {
+  font-size: 0.9rem;
+  color: var(--testo);
+  background-color: var(--bianco);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+/* =====================================================
+   SEZIONE PAROLA DEL GIORNO
+   ===================================================== */
+
+
+/* Scheda visiva della parola del giorno */
+.div_parolaGiorno {
+  background: linear-gradient(135deg, var(--blu) 0%, var(--blu-scuro) 100%);
+  color: var(--bianco);
+  border-radius: var(--raggio);
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgba(0, 61, 165, 0.25);
+}
+
+/* La parola in dialetto in grande */
+.parola {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: var(--oro);
+  line-height: 1;
+}
+
+/* Categoria grammaticale sotto la parola */
+.parola_categoria {
+  font-size: 1.4rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Significato in italiano */
+.parola_significato {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Esempio d'uso */
+.parola_esempio {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Traduzione dell'esempio */
+.esempio {
+  color: var(--oro);
+}
+
+/* Bottone pronuncia audio nella parola del giorno */
+.btn_audioGiorno {
+  margin-top: 8px;
+  padding: 10px 24px;
+  background-color: var(--oro);
+  color: var(--testo-scuro);
+  border: none;
+  border-radius: 20px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-size: 1.3rem;
+}
+
+.btn_audioGiorno:hover {
+  opacity: 0.85;
+}
+
+/* =====================================================
+   SEZIONE NUMERI DEL DIZIONARIO
+   Griglia di statistiche numeriche
+   ===================================================== */
+.sezione_numeri {}
+
+/* Griglia: 3 colonne su desktop, 2 su tablet, 1 su mobile */
+.griglia_numeri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne uguali */
+  gap: 16px;
+}
+
+/* Singola card con numero e etichetta */
+.numero_card {
+  background-color: var(--bianco);
+  border-radius: var(--raggio);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-top: 4px solid var(--blu); /* linea blu in cima */
+}
+
+/* Il numero grande */
+.numero_valore {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--blu);
+  font-weight: 700;
+}
+
+/* Etichetta descrittiva sotto il numero */
+.numero_label {
+  font-size: 1.4rem;
+  color: var(--testo);
+  margin-top: 4px;
+}
+
+/* =====================================================
+   SEZIONE PAROLE PIÙ CERCATE
+   Tag cliccabili che avviano la ricerca
+   ===================================================== */
+.sezione_popolari {}
+
+/* Contenitore dei tag */
+.parole_popolari {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Singolo tag parola cliccabile */
+.tag_parola {
+  padding: 8px 18px;
+  background-color: var(--bianco);
+  border: 2px solid var(--grigio-bordo);
+  border-radius: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--blu);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tag_parola:hover {
+  background-color: var(--blu);
+  color: var(--bianco);
+  border-color: var(--blu);
+}
+
+/* =====================================================
+   SEZIONE LINK UTILI
+   Griglia di card-link a risorse esterne
+   ===================================================== */
+.sezione_link {}
+
+/* Griglia: 2 colonne su desktop */
+.griglia_link {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Singola card link */
+.link_card {
+  display: block;
+  background-color: var(--bianco);
+  border: 2px solid var(--grigio-bordo);
+  border-radius: var(--raggio);
+  padding: 16px 20px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.link_card:hover {
+  border-color: var(--oro);
+  box-shadow: 0 4px 12px rgba(200, 169, 81, 0.2);
+  transform: translateY(-2px); /* leggero sollevamento al hover */
+}
+
+/* Nome del link */
+.link_nome {
+  font-weight: 700;
+  color: var(--blu);
+  font-size: 1.5rem;
+}
+
+/* Descrizione breve del link */
+.link_desc {
+  font-size: 1.2rem;
+  color: var(--testo);
+  margin-top: 4px;
+}
+
+/* =====================================================
+   FOOTER
+   Quattro colonne: sito, navigazione, contatti, loghi
+   ===================================================== */
+footer {
+  background-color: var(--testo-scuro);
+  color: var(--bianco);
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonne uguali */
+  gap: 32px;
+}
+
+/* Titoli delle colonne del footer */
+.footer_titolo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--oro);
+  margin-bottom: 14px;
+}
+
+/* Testo normale nel footer */
+footer p {
+  font-size: 1.2rem;
+  opacity: 0.75;
+  line-height: 1.7;
+}
+
+/* Nota aggiuntiva nel footer */
+.footer_note {
+  margin-top: 8px;
+  font-size: 1.1rem ;
+  opacity: 0.6 ;
+}
+
+/* Lista link nella colonna Navigazione */
+.footer_lista {
+  list-style: none;
+}
+
+.footer_lista li {
+  margin-bottom: 8px;
+}
+
+.footer_lista li a {
+  color: var(--bianco);
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.footer_lista li a:hover {
+  opacity: 1;
+}
+
+.footer_email {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--oro);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: opacity 0.2s;
+}
+
+.footer_email:hover {
+  opacity: 0.8;
+}
+
+.loghi {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
