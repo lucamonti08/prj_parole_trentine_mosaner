@@ -925,17 +925,8 @@ footer p {
   line-height: 1.4;
 }
  
-
- 
-/* Riga "con la guida dei docenti" */
 .nome_guida {
   font-size: 1.1rem;
   color: var(--testo);
   font-style: italic;
 }
- 
-/* Logo istituto dentro la card grande */
-.istituto_logo {
-  margin-top: 8px;
-}
- 
