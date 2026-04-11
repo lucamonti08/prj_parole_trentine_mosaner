@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Progetto - e-Trentin</title>
+  <link rel="stylesheet" href="/sito/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+
+    <div class="header_titolo">
+      <h1 class="title">e - Trentin</h1>
+      <p class="sottotitolo">Dizionario del dialetto di Trento on line</p>
+    </div>
+
+    <nav class="barra-nav">
+      <a href="/sito/index.html" class="link">HOME</a>
+      <a href="/sito/pagine/progetto.html" class="link attivo">IL PROGETTO</a> <!-- pagina attiva -->
+      <a href="/sito/pagine/chiSiamo.html" class="link">CHI SIAMO</a>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+
+    <section class="sezione_progetto" id="presentazione">
+
+      <h2 class="sezione_titolo">Presentazione</h2>
+
+      <div class="testo_blocco">
+        <p>
+          e - Trentin è una piattaforma web che permette agli utenti di esplorare e apprendere 
+          il dialetto trentino attraverso un'interfaccia intuitiva e accessibile.
+           Il sistema offre traduzioni bidirezionali italiano-dialetto, esempi d'uso contestualizzati 
+           e supporto multimediale per una migliore comprensione.
+        </p>
+        <p>
+          Il progetto nasce dalla collaborazione tra esperti linguistici, istituzioni
+          culturali e studenti dell'Istituto Tecnico Tecnologico Buonarroti di Trento,
+          con la guida dei loro docenti.
+        </p>
+        <p>
+          Il dizionario offre una ricerca bidirezionale, con indicazione della categoria grammaticale,
+          esempi d'uso e la pronuncia audio.
+        </p>
+      </div>
+
+    </section>
+
+    <!--  Elenco delle fonti -->
+    <section class="sezione_progetto" id="fonti">
+
+      <h2 class="sezione_titolo">Fonti</h2>
+
+      <div class="testo_blocco">
+        <ul class="lista_fonti">
+          <li>
+            <strong>Dizionario del dialetto trentino</strong> – Aldo Aneggi
+          </li>
+          <li>
+            <strong>Lessico trentino</strong> - Università di Trento
+          </li>
+          <li>
+            <strong>AlpiLinK</strong> - Lingue alpine in contatto
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- guida per la ricerca -->
+    <section class="sezione_progetto" id="indicazioni">
+
+      <h2 class="sezione_titolo">Guida per la Ricerca</h2>
+
+      <div class="testo_blocco">
+        <p>Per ottenere i migliori risultati dalla ricerca, si consiglia di:</p>
+
+        
+      </div>
+
+    </section>
+
+    <!-- abbreviazioni -->
+    <section class="sezione_progetto" id="abbreviazioni">
+
+      <h2 class="sezione_titolo">Abbreviazioni</h2>
+
+      <div class="testo_blocco">
+        <p>Nelle schede delle parole vengono usate le seguenti abbreviazioni:</p>
+
+        <table class="tabella_abbreviazioni">
+          <thead>
+            <tr>
+              <th>Sigla</th>
+              <th>Significato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="sigla">sm</td>   <td>sostantivo maschile</td></tr>
+            <tr><td class="sigla">sf</td>   <td>sostantivo femminile</td></tr>
+            <tr><td class="sigla">np</td>   <td>nome proprio</td></tr>
+            <tr><td class="sigla">vb</td>   <td>verbo</td></tr>
+            <tr><td class="sigla">agg</td>  <td>aggettivo</td></tr>
+            <tr><td class="sigla">avv</td>  <td>avverbio</td></tr>
+            <tr><td class="sigla">prep</td> <td>preposizione</td></tr>
+            <tr><td class="sigla">escl</td> <td>esclamazione</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <!-- suggerimento delle parole -->
+    <section class="sezione_progetto" id="suggerisci">
+
+      <h2 class="sezione_titolo">Suggerisci una Parola</h2>
+
+      <div class="testo_blocco">
+        <p>
+          Compilare il modulo per segnalare una nuova parola da aggiungere: verrà valutata e
+          se confermata verrà aggiunta al dizionario.
+        </p>
+      </div>
+
+      <!-- modulo di suggerimento parola -->
+      <form class="form_suggerisci">
+        <!-- parola in dialetto -->
+        <div class="campo">
+          <label class="campo_label" for="parolaDialetto">Parola in dialetto</label>
+          <input type="text" id="parolaDialetto" class="campo_input" placeholder="inserisci" required >
+        </div>
+
+        <!-- parola in italiano -->
+        <div class="campo">
+          <label class="campo_label" for="traduzione">Traduzione in italiano </label>
+          <input type="text" id="traduzione" class="campo_input" placeholder="inserisci" required>
+        </div>
+
+        <!-- categoria -->
+        <div class="campo">
+          <label class="campo_label" for="categoria">Categoria grammaticale</label>
+          <select id="categoria" name="categoria" class="campo_input">
+            <option value=""> seleziona </option>
+            <option value="sm">sm - sostantivo maschile</option>
+            <option value="sf">sf - sostantivo femminile</option>
+            <option value="np">np - nome proprio</option>
+            <option value="vb">vb - verbo</option>
+            <option value="agg">agg - aggettivo</option>
+            <option value="avv">avv - avverbio</option>
+            <option value="prep">prep - preposizione</option>
+            <option value="escl">escl - esclamazione</option>
+          </select>
+        </div>
+
+        <!-- esempio d uso -->
+        <div class="campo">
+          <label class="campo_label" for="esempio">Esempio d'uso</label>
+          <textarea id="esempio" class="campo_input campo_textarea" placeholder="inserisci" required></textarea>
+        </div>
+
+
+        <!-- Bottone di invio -->
+        <button type="submit" class="btn_invia">INVIA IL SUGGERIMENTO</button>
+
+      </form>
+
+    </section>
+
+    <!-- area di accesso per admin-->
+    <section class="sezione_progetto" id="admin">
+
+      <h2 class="sezione_titolo">Admin</h2>
+
+      <div class="testo_blocco">
+        <p>
+          Inserisci le credenziali per accedere all'area admin.
+        </p>
+      </div>
+
+      <!-- login per l'area admin -->
+      <form class="form_admin"> <!--mettere il link alla pagine admin-->
+        <div class="campo">
+          <label class="campo_label" for="adminEmail">Email</label>
+          <input type="email" id="adminEmail" class="campo_input" placeholder="inserisci" required>
+        </div>
+
+        <div class="campo">
+          <label class="campo_label" for="adminPassword">Password</label>
+          <input type="password" id="adminPassword" class="campo_input" placeholder="••••••" required>
+        </div>
+
+        <button type="submit" class="btn_invia btn_admin">ACCEDI</button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+    <footer>
+
+    <div class="footer_col">
+      <h3 class="footer_titolo">e - Trentin</h3>
+      <p>Dizionario del dialetto di Trento on line</p>
+      <p class="footer_note">Un progetto culturale per conservare<br>e valorizzare il patrimonio linguistico trentino.</p>
+    </div>
+
+    <div class="footer_col">
+      <h3 class="footer_titolo">Navigazione</h3>
+      <ul class="footer_lista">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="progetto.html">Il Progetto</a></li>
+        <li><a href="chisiamo.html">Chi Siamo</a></li>
+      </ul>
+    </div>
+
+    <div class="footer_col">
+      <h3 class="footer_titolo">Contatti</h3>
+      <p>Per informazioni, segnalazioni<br>o suggerire nuove parole:</p>
+      <a href="mailto:emailProva@gmail.com" class="footer_email">emailProva@gmail.com</a>
+    </div>
+
+    <div class="footer_col">
+      <h3 class="footer_titolo">Con il supporto di</h3>
+      <div class="loghi">
+        <div class="logo_placeholder">Logo 1</div>
+        <div class="logo_placeholder">Logo 2</div>
+        <div class="logo_placeholder">Logo 3</div>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
