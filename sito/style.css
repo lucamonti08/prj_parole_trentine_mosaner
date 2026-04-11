@@ -61,7 +61,7 @@ header {
 }
 
 /* Titolo principale "e-Trentin" */
-.title {
+.titolo {
   font-family: 'Playfair Display', serif; /* font elegante per il titolo */
   font-size: 2rem;
   color: var(--oro);              /* oro per il titolo */
@@ -89,7 +89,7 @@ header {
   color: var(--bianco);
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 1px;
   transition: all 0.2s;           /* animazione morbida al hover */
 }
@@ -150,7 +150,7 @@ header {
 /* Titolo "Cerca una parola" */
 .cerca_titolo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
+  font-size: 2rem;
   color: var(--testo-scuro);
   margin-bottom: 4px;
 }
@@ -159,7 +159,7 @@ header {
 .cerca_sottotitolo {
   color: var(--testo);
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* Contenitore dei radio button per la direzione di ricerca */
@@ -446,7 +446,7 @@ header {
    SEZIONE NUMERI DEL DIZIONARIO
    Griglia di statistiche numeriche
    ===================================================== */
-.sezione_numeri {}
+
 
 /* Griglia: 3 colonne su desktop, 2 su tablet, 1 su mobile */
 .griglia_numeri {
@@ -462,7 +462,6 @@ header {
   padding: 20px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  border-top: 4px solid var(--blu); /* linea blu in cima */
 }
 
 /* Il numero grande */
@@ -484,7 +483,7 @@ header {
    SEZIONE PAROLE PIÙ CERCATE
    Tag cliccabili che avviano la ricerca
    ===================================================== */
-.sezione_popolari {}
+
 
 /* Contenitore dei tag */
 .parole_popolari {
@@ -630,3 +629,313 @@ footer p {
   flex-direction: column;
   gap: 8px;
 }
+
+
+
+
+
+/* =====================================================
+   SEZIONE GENERICA DELLA PAGINA PROGETTO
+   Card bianca con ombra, usata per ogni sezione
+   ===================================================== */
+.sezione_progetto {
+  background-color: var(--bianco);
+  border-radius: var(--raggio);
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 61, 165, 0.08);
+}
+ 
+/* =====================================================
+   BLOCCO DI TESTO
+   Paragrafi di testo nelle sezioni; aggiunge spazio
+   tra un paragrafo e l'altro
+   ===================================================== */
+.testo {
+  display: flex;
+  flex-direction: column;   /* paragrafi impilati verticalmente */
+  gap: 14px;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--testo);
+}
+ 
+/* =====================================================
+   LISTA FONTI (sezione Fonti)
+   Lista puntata con stile personalizzato
+   ===================================================== */
+.lista_fonti {
+  list-style: none;         /* rimuove i pallini predefiniti */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+ 
+.lista_fonti li {
+  padding: 12px 16px;
+  background-color: var(--grigio-card);
+  border-left: 4px solid var(--oro); /* linea oro a sinistra */
+  border-radius: 6px;
+  font-size: 1.4rem;
+}
+ 
+
+/* =====================================================
+   LISTA INDICAZIONI (sezione Indicazioni per la ricerca)
+   Lista numerata con stile personalizzato
+   ===================================================== */
+.lista_indicazioni {
+  list-style: none;         /* rimuove numeri predefiniti */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+  counter-reset: indicazioni; /* inizializza il contatore CSS */
+}
+ 
+.lista_indicazioni li {
+  counter-increment: indicazioni; /* incrementa il contatore a ogni li */
+  padding: 14px 16px 14px 52px;   /* spazio a sinistra per il numero */
+  background-color: var(--grigio-card);
+  border-radius: 8px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  position: relative;             /* necessario per posizionare il ::before */
+}
+ 
+/* Numero del punto generato da CSS */
+.lista_indicazioni li::before {
+  content: counter(indicazioni);  /* mostra il numero corrente */
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 28px;
+  height: 28px;
+  background-color: var(--blu);
+  color: var(--bianco);
+  border-radius: 50%;             /* cerchio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+ 
+/* =====================================================
+   TABELLA ABBREVIAZIONI
+   Tabella con sigla e significato
+   ===================================================== */
+.tabella_abbreviazioni {
+  width: 100%;
+  border-collapse: collapse;  /* rimuove spazio tra celle */
+  margin-top: 12px;
+  font-size: 1.3rem;
+}
+ 
+/* Intestazione della tabella */
+.tabella_abbreviazioni thead tr {
+  background-color: var(--blu);
+  color: var(--bianco);
+}
+ 
+.tabella_abbreviazioni th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+ 
+/* Celle del corpo della tabella */
+.tabella_abbreviazioni td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--grigio-bordo); /* riga separatrice */
+}
+ 
+/* Righe alternate con sfondo leggermente colorato (zebra) */
+.tabella_abbreviazioni tbody tr:nth-child(even) {
+  background-color: var(--grigio-card);
+}
+ 
+.tabella_abbreviazioni tbody tr:hover {
+  background-color: #e8edf7; /* evidenzia la riga al passaggio del mouse */
+}
+ 
+/* Colonna della sigla: scritta in blu e grassetto */
+.sigla {
+  font-weight: 700;
+  color: var(--blu);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3rem;
+}
+ 
+/* =====================================================
+   FORM SUGGERISCI UNA PAROLA
+   ===================================================== */
+.form_suggerisci {
+  display: flex;
+  flex-direction: column;   /* campi impilati verticalmente */
+  gap: 18px;
+  margin-top: 20px;
+}
+ 
+/* Gruppo campo: etichetta + input/select/textarea */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+ 
+/* Etichetta del campo */
+.campo_label {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--testo-scuro);
+}
+ 
+/* Campo input, select e textarea condividono lo stesso stile */
+.campo_input {
+  padding: 12px 16px;
+  border: 2px solid var(--grigio-bordo);
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3rem;
+  color: var(--testo-scuro);
+  outline: none;
+  transition: border-color 0.2s;
+  background-color: var(--bianco);
+}
+ 
+/* Bordo blu quando il campo è selezionato */
+.campo_input:focus {
+  border-color: var(--blu);
+}
+ 
+/* Textarea: altezza fissa, non ridimensionabile orizzontalmente */
+.campo_textarea {
+  min-height: 100px;
+  resize: vertical;   /* permette solo il ridimensionamento verticale */
+}
+ 
+/* Bottone di invio del form */
+.btn_invia {
+  align-self: flex-start;     /* non si allarga a tutta la larghezza */
+  padding: 13px 30px;
+  background-color: var(--blu);
+  color: var(--bianco);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+ 
+.btn_invia:hover {
+  background-color: var(--blu-scuro);
+}
+ 
+/* =====================================================
+   FORM ADMIN
+   Stesso stile del form suggerisci ma più compatto
+   ===================================================== */
+.form_admin {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+  max-width: 400px;           /* larghezza ridotta: è solo login */
+}
+ 
+/* Bottone admin: stesso del btn_invia ma con colore oro */
+.btn_admin {
+  background-color: var(--oro);
+  color: var(--testo-scuro);
+}
+ 
+.btn_admin:hover {
+  background-color: #b8943e;  /* oro più scuro */
+}
+ 
+/* =====================================================
+   INTRO PAGINA CHI SIAMO
+   Titolo + paragrafo introduttivo
+   ===================================================== */
+
+ 
+/* Paragrafo introduttivo sotto il titolo */
+.intro_testo {
+  font-size: 1.4rem;
+  color: var(--testo);
+  line-height: 1.8;
+  margin-top: 8px;
+}
+ 
+/* =====================================================
+   GRIGLIA DELLE PERSONE (pagina Chi Siamo)
+   Griglia di card che mostrano i ruoli e i nomi
+   ===================================================== */
+.griglia_persone {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+ 
+/* Singola card persona/ruolo */
+.card_persona {
+  background-color: var(--bianco);
+  border-radius: var(--raggio);
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 61, 165, 0.08);
+  display: flex;
+  flex-direction: column;   /* icona, ruolo, nomi in colonna */
+  gap: 10px;
+}
+ 
+/* Card grande: occupa 2 colonne (per il Supporto Informatico) */
+.card_grande {
+  grid-column: span 2;      /* si estende su entrambe le colonne */
+}
+ 
+
+ 
+/* Etichetta del ruolo (es. "Ideazione") */
+.card_ruolo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--blu);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+ 
+/* Contenitore dei nomi: impilati verticalmente */
+.card_nomi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+ 
+/* Singolo nome */
+.nome_persona {
+  font-size: 1.2rem;
+  color: var(--testo-scuro);
+  font-weight: 700;
+  line-height: 1.4;
+}
+ 
+
+ 
+/* Riga "con la guida dei docenti" */
+.nome_guida {
+  font-size: 1.1rem;
+  color: var(--testo);
+  font-style: italic;
+}
+ 
+/* Logo istituto dentro la card grande */
+.istituto_logo {
+  margin-top: 8px;
+}
+ 

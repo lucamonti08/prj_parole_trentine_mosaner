@@ -12,7 +12,7 @@
   <header>
 
     <div class="header_titolo">
-      <h1 class="title">e - Trentin</h1>
+      <h1 class="titolo">e - Trentin</h1>
       <p class="sottotitolo">Dizionario del dialetto di Trento on line</p>
     </div>
 
@@ -27,11 +27,11 @@
   <main class="main">
 
 
-    <section class="sezione_progetto" id="presentazione">
+    <section class="sezione_progetto" >
 
       <h2 class="sezione_titolo">Presentazione</h2>
 
-      <div class="testo_blocco">
+      <div class="testo">
         <p>
           e - Trentin è una piattaforma web che permette agli utenti di esplorare e apprendere 
           il dialetto trentino attraverso un'interfaccia intuitiva e accessibile.
@@ -52,14 +52,14 @@
     </section>
 
     <!--  Elenco delle fonti -->
-    <section class="sezione_progetto" id="fonti">
+    <section class="sezione_progetto" >
 
       <h2 class="sezione_titolo">Fonti</h2>
 
       <div class="testo_blocco">
         <ul class="lista_fonti">
           <li>
-            <strong>Dizionario del dialetto trentino</strong> – Aldo Aneggi
+            <strong>Dizionario del dialetto trentino</strong> - Aldo Aneggi
           </li>
           <li>
             <strong>Lessico trentino</strong> - Università di Trento
@@ -73,11 +73,11 @@
     </section>
 
     <!-- guida per la ricerca -->
-    <section class="sezione_progetto" id="indicazioni">
+    <section class="sezione_progetto" >
 
       <h2 class="sezione_titolo">Guida per la Ricerca</h2>
 
-      <div class="testo_blocco">
+      <div class="testo">
         <p>Per ottenere i migliori risultati dalla ricerca, si consiglia di:</p>
 
         
@@ -86,11 +86,11 @@
     </section>
 
     <!-- abbreviazioni -->
-    <section class="sezione_progetto" id="abbreviazioni">
+    <section class="sezione_progetto">
 
       <h2 class="sezione_titolo">Abbreviazioni</h2>
 
-      <div class="testo_blocco">
+      <div class="testo">
         <p>Nelle schede delle parole vengono usate le seguenti abbreviazioni:</p>
 
         <table class="tabella_abbreviazioni">
@@ -116,11 +116,11 @@
     </section>
 
     <!-- suggerimento delle parole -->
-    <section class="sezione_progetto" id="suggerisci">
+    <section class="sezione_progetto" >
 
       <h2 class="sezione_titolo">Suggerisci una Parola</h2>
 
-      <div class="testo_blocco">
+      <div class="testo">
         <p>
           Compilare il modulo per segnalare una nuova parola da aggiungere: verrà valutata e
           se confermata verrà aggiunta al dizionario.
@@ -132,19 +132,19 @@
         <!-- parola in dialetto -->
         <div class="campo">
           <label class="campo_label" for="parolaDialetto">Parola in dialetto</label>
-          <input type="text" id="parolaDialetto" class="campo_input" placeholder="inserisci" required >
+          <input type="text" class="campo_input" placeholder="inserisci" required >
         </div>
 
         <!-- parola in italiano -->
         <div class="campo">
           <label class="campo_label" for="traduzione">Traduzione in italiano </label>
-          <input type="text" id="traduzione" class="campo_input" placeholder="inserisci" required>
+          <input type="text" class="campo_input" placeholder="inserisci" required>
         </div>
 
         <!-- categoria -->
         <div class="campo">
           <label class="campo_label" for="categoria">Categoria grammaticale</label>
-          <select id="categoria" name="categoria" class="campo_input">
+          <select name="categoria" class="campo_input">
             <option value=""> seleziona </option>
             <option value="sm">sm - sostantivo maschile</option>
             <option value="sf">sf - sostantivo femminile</option>
@@ -160,7 +160,7 @@
         <!-- esempio d uso -->
         <div class="campo">
           <label class="campo_label" for="esempio">Esempio d'uso</label>
-          <textarea id="esempio" class="campo_input campo_textarea" placeholder="inserisci" required></textarea>
+          <textarea class="campo_input campo_textarea" placeholder="inserisci" required></textarea>
         </div>
 
 
@@ -172,11 +172,11 @@
     </section>
 
     <!-- area di accesso per admin-->
-    <section class="sezione_progetto" id="admin">
+    <section class="sezione_progetto" >
 
       <h2 class="sezione_titolo">Admin</h2>
 
-      <div class="testo_blocco">
+      <div class="testo">
         <p>
           Inserisci le credenziali per accedere all'area admin.
         </p>
@@ -186,12 +186,12 @@
       <form class="form_admin"> <!--mettere il link alla pagine admin-->
         <div class="campo">
           <label class="campo_label" for="adminEmail">Email</label>
-          <input type="email" id="adminEmail" class="campo_input" placeholder="inserisci" required>
+          <input type="email" class="campo_input" placeholder="inserisci" required>
         </div>
 
         <div class="campo">
           <label class="campo_label" for="adminPassword">Password</label>
-          <input type="password" id="adminPassword" class="campo_input" placeholder="••••••" required>
+          <input type="password"  class="campo_input" placeholder="••••••" required>
         </div>
 
         <button type="submit" class="btn_invia btn_admin">ACCEDI</button>
@@ -213,9 +213,9 @@
     <div class="footer_col">
       <h3 class="footer_titolo">Navigazione</h3>
       <ul class="footer_lista">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="progetto.html">Il Progetto</a></li>
-        <li><a href="chisiamo.html">Chi Siamo</a></li>
+        <li><a href="/sito/index.html">Home</a></li>
+        <li><a href="/sito/pagine/progetto.html">Il Progetto</a></li>
+        <li><a href="/sito/pagine/chiSiamo.html">Chi Siamo</a></li>
       </ul>
     </div>
 
