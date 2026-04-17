@@ -18,7 +18,7 @@
 
     <nav class="barra-nav">
       <a href="/sito/index.html" class="link">HOME</a>
-      <a href="/sito/pagine/progetto.html" class="link attivo">IL PROGETTO</a> <!-- pagina attiva -->
+      <a href="/sito/pagine/progetto.html" class="link attivo">IL PROGETTO</a>
       <a href="/sito/pagine/chiSiamo.html" class="link">CHI SIAMO</a>
     </nav>
 
@@ -26,8 +26,7 @@
 
   <main class="main">
 
-
-    <section class="sezione_progetto" >
+    <section class="sezione_progetto">
 
       <h2 class="sezione_titolo">Presentazione</h2>
 
@@ -51,8 +50,7 @@
 
     </section>
 
-    <!--  Elenco delle fonti -->
-    <section class="sezione_progetto" >
+    <section class="sezione_progetto">
 
       <h2 class="sezione_titolo">Fonti</h2>
 
@@ -72,20 +70,16 @@
 
     </section>
 
-    <!-- guida per la ricerca -->
-    <section class="sezione_progetto" >
+    <section class="sezione_progetto">
 
       <h2 class="sezione_titolo">Guida per la Ricerca</h2>
 
       <div class="testo">
         <p>Per ottenere i migliori risultati dalla ricerca, si consiglia di:</p>
-
-        
       </div>
 
     </section>
 
-    <!-- abbreviazioni -->
     <section class="sezione_progetto">
 
       <h2 class="sezione_titolo">Abbreviazioni</h2>
@@ -115,8 +109,7 @@
 
     </section>
 
-    <!-- suggerimento delle parole -->
-    <section class="sezione_progetto" >
+    <section class="sezione_progetto">
 
       <h2 class="sezione_titolo">Suggerisci una Parola</h2>
 
@@ -127,24 +120,21 @@
         </p>
       </div>
 
-      <!-- modulo di suggerimento parola -->
-      <form class="form_suggerisci">
-        <!-- parola in dialetto -->
+      <form class="form_suggerisci" id="formSuggerisci">
+
         <div class="campo">
           <label class="campo_label" for="parolaDialetto">Parola in dialetto</label>
-          <input type="text" class="campo_input" placeholder="inserisci" required >
+          <input type="text" class="campo_input" id="suggerisciDialetto" placeholder="inserisci" required>
         </div>
 
-        <!-- parola in italiano -->
         <div class="campo">
           <label class="campo_label" for="traduzione">Traduzione in italiano </label>
-          <input type="text" class="campo_input" placeholder="inserisci" required>
+          <input type="text" class="campo_input" id="suggerisciItaliano" placeholder="inserisci" required>
         </div>
 
-        <!-- categoria -->
         <div class="campo">
           <label class="campo_label" for="categoria">Categoria grammaticale</label>
-          <select name="categoria" class="campo_input">
+          <select name="categoria" class="campo_input" id="suggerisciCategoria">
             <option value=""> seleziona </option>
             <option value="sm">sm - sostantivo maschile</option>
             <option value="sf">sf - sostantivo femminile</option>
@@ -157,22 +147,18 @@
           </select>
         </div>
 
-        <!-- esempio d uso -->
         <div class="campo">
           <label class="campo_label" for="esempio">Esempio d'uso</label>
-          <textarea class="campo_input campo_textarea" placeholder="inserisci" required></textarea>
+          <textarea class="campo_input campo_textarea" id="suggerisciEsempio" placeholder="inserisci" required></textarea>
         </div>
 
-
-        <!-- Bottone di invio -->
         <button type="submit" class="btn_invia">INVIA IL SUGGERIMENTO</button>
 
       </form>
 
     </section>
 
-    <!-- area di accesso per admin-->
-    <section class="sezione_progetto" >
+    <section class="sezione_progetto">
 
       <h2 class="sezione_titolo">Admin</h2>
 
@@ -182,16 +168,15 @@
         </p>
       </div>
 
-      <!-- login per l'area admin -->
-      <form class="form_admin"> <!--mettere il link alla pagine admin-->
+      <form class="form_admin" id="formAdmin">
         <div class="campo">
           <label class="campo_label" for="adminEmail">Email</label>
-          <input type="email" class="campo_input" placeholder="inserisci" required>
+          <input type="email" class="campo_input" id="adminEmail" placeholder="inserisci" required>
         </div>
 
         <div class="campo">
           <label class="campo_label" for="adminPassword">Password</label>
-          <input type="password"  class="campo_input" placeholder="••••••" required>
+          <input type="password" class="campo_input" id="adminPassword" placeholder="••••••" required>
         </div>
 
         <button type="submit" class="btn_invia btn_admin">ACCEDI</button>
@@ -202,7 +187,7 @@
 
   </main>
 
-    <footer>
+  <footer>
 
     <div class="footer_col">
       <h3 class="footer_titolo">e - Trentin</h3>
@@ -236,5 +221,6 @@
 
   </footer>
 
+  <script src="/sito/js/progetto.js"></script>
 </body>
 </html>

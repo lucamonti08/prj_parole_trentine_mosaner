@@ -13,7 +13,6 @@ Il Dizionario Dialetto Trentino è una piattaforma web che permette agli utenti 
 - **Espressioni Dialettali**: Consulta modi di dire e espressioni tipiche
 - **Esempi d'Uso**: Visualizza frasi di esempio per comprendere il contesto
 - **Galleria Fotografica**: Immagini esplicative per il riconoscimento di oggetti e concetti
-- **Cronologia Ricerche**: Accedi rapidamente alle tue ricerche precedenti
 - **Filtri Avanzati**: Filtra per lettera, ordine alfabetico, genere, dizionario e altro
 
 ## Requisiti di Sistema

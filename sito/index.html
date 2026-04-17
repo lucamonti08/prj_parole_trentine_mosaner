@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
   <header>
 
     <div class="header_titolo">
@@ -18,7 +17,7 @@
     </div>
 
     <nav class="barra-nav">
-      <a href="index.html" class="link attivo">HOME</a> <!--pagina attiva-->
+      <a href="index.html" class="link attivo">HOME</a>
       <a href="/sito/pagine/progetto.html" class="link">IL PROGETTO</a>
       <a href="/sito/pagine/chiSiamo.html" class="link">CHI SIAMO</a>
     </nav>
@@ -27,78 +26,75 @@
 
   <main class="main">
 
-    <section class="sezione_cerca" >
+    <section class="sezione_cerca" id="sezioneRicerca">
 
       <h2 class="cerca_titolo">Cerca una parola</h2>
       <p class="cerca_sottotitolo">Ricerca bidirezionale: dialetto ↔ italiano</p>
 
-      
       <div class="direzione_ricerca">
         <label class="radio_label">
-          <input type="radio" name="direzione"  checked>
+          <input type="radio" name="direzione" id="radioDialetto" checked>
           Dialetto → Italiano
         </label>
         <label class="radio_label">
-          <input type="radio" name="direzione" >
+          <input type="radio" name="direzione" id="radioItaliano">
           Italiano → Dialetto
         </label>
       </div>
 
       <div class="barra_ricerca">
-        <input type="text" class="campo_ricerca" placeholder="Scrivi una parola...">
-        <button class="btn_cerca">CERCA</button>
+        <input type="text" class="campo_ricerca" id="campoRicerca" placeholder="Scrivi una parola...">
+        <button class="btn_cerca" id="btnCerca">CERCA</button>
       </div>
 
       <div class="filtri_categoria">
         <span class="filtri_label">Filtra per:</span>
-        <button class="filtro attivo" >Tutti</button>  <!-- btn attivo di default -->
-        <button class="filtro" >sm</button>
-        <button class="filtro" >sf</button>
-        <button class="filtro" >np</button>
-        <button class="filtro">vb</button>
-        <button class="filtro" >avv</button>
-        <button class="filtro" >agg</button>
-        <button class="filtro" >prep</button>
-        <button class="filtro">escl</button>
+        <button class="filtro attivo" data-cat="tutti">Tutti</button>
+        <button class="filtro" data-cat="sm">sm</button>
+        <button class="filtro" data-cat="sf">sf</button>
+        <button class="filtro" data-cat="np">np</button>
+        <button class="filtro" data-cat="vb">vb</button>
+        <button class="filtro" data-cat="avv">avv</button>
+        <button class="filtro" data-cat="agg">agg</button>
+        <button class="filtro" data-cat="prep">prep</button>
+        <button class="filtro" data-cat="escl">escl</button>
       </div>
 
       <div class="filtri_alfabeto">
-        <span class="lettera" >A</span>
-        <span class="lettera" >B</span>
-        <span class="lettera" >C</span>
-        <span class="lettera">D</span>
-        <span class="lettera">E</span>
-        <span class="lettera">F</span>
-        <span class="lettera">G</span>
-        <span class="lettera">H</span>
-        <span class="lettera">I</span>
-        <span class="lettera">L</span>
-        <span class="lettera">M</span>
-        <span class="lettera">N</span>
-        <span class="lettera">O</span>
-        <span class="lettera">P</span>
-        <span class="lettera">R</span>
-        <span class="lettera">S</span>
-        <span class="lettera">T</span>
-        <span class="lettera">U</span>
-        <span class="lettera">V</span>
-        <span class="lettera">Z</span>
+        <span class="lettera" data-lettera="A">A</span>
+        <span class="lettera" data-lettera="B">B</span>
+        <span class="lettera" data-lettera="C">C</span>
+        <span class="lettera" data-lettera="D">D</span>
+        <span class="lettera" data-lettera="E">E</span>
+        <span class="lettera" data-lettera="F">F</span>
+        <span class="lettera" data-lettera="G">G</span>
+        <span class="lettera" data-lettera="H">H</span>
+        <span class="lettera" data-lettera="I">I</span>
+        <span class="lettera" data-lettera="L">L</span>
+        <span class="lettera" data-lettera="M">M</span>
+        <span class="lettera" data-lettera="N">N</span>
+        <span class="lettera" data-lettera="O">O</span>
+        <span class="lettera" data-lettera="P">P</span>
+        <span class="lettera" data-lettera="R">R</span>
+        <span class="lettera" data-lettera="S">S</span>
+        <span class="lettera" data-lettera="T">T</span>
+        <span class="lettera" data-lettera="U">U</span>
+        <span class="lettera" data-lettera="V">V</span>
+        <span class="lettera" data-lettera="Z">Z</span>
       </div>
 
-    
-      <!-- div dove appariranno i risultati della ricerca -->
-      <div class="risultati" ></div>
+      <div class="risultati" id="areaRisultati"></div>
 
     </section>
 
-    <section  >
+    <section>
 
       <h2 class="sezione_titolo">La Parola del Giorno</h2>
       <div class="div_parolaGiorno">
-        <div class="parola" >tòsa</div>
-        <div class="parola_categoria" >sf. - sostantivo femminile</div>
-        <div class="parola_significato" >ragazza, giovane donna</div>
-        <div class="parola_esempio" >
+        <div class="parola">tòsa</div>
+        <div class="parola_categoria">sf. - sostantivo femminile</div>
+        <div class="parola_significato">ragazza, giovane donna</div>
+        <div class="parola_esempio">
           <em>"La tòsa la cantava en bel"</em>
           <span class="esempio">→ "La ragazza cantava bene"</span>
         </div>
@@ -107,11 +103,10 @@
 
     </section>
 
-    <section class="sezione_numeri" >
+    <section class="sezione_numeri">
 
       <h2 class="sezione_titolo">I Numeri del Dizionario</h2>
 
-      <!-- griglia con dati -->
       <div class="griglia_numeri">
 
         <div class="numero_card">
@@ -148,20 +143,19 @@
 
     </section>
 
-
-    <section class="sezione_popolari" >
+    <section class="sezione_popolari">
 
       <h2 class="sezione_titolo">Le Parole più Cercate</h2>
 
       <div class="parole_popolari">
-        <span class="tag_parola" >tòsa</span>
-        <span class="tag_parola" >boca</span>
-        <span class="tag_parola" >mas-cio</span>
-        <span class="tag_parola" >aga</span>
-        <span class="tag_parola">stua</span>
-        <span class="tag_parola" >laòrar</span>
-        <span class="tag_parola" >magnar</span>
-        <span class="tag_parola" >ciòco</span>
+        <span class="tag_parola" data-parola="tòsa">tòsa</span>
+        <span class="tag_parola" data-parola="boca">boca</span>
+        <span class="tag_parola" data-parola="mas-cio">mas-cio</span>
+        <span class="tag_parola" data-parola="aga">aga</span>
+        <span class="tag_parola" data-parola="stua">stua</span>
+        <span class="tag_parola" data-parola="laòrar">laòrar</span>
+        <span class="tag_parola" data-parola="magnar">magnar</span>
+        <span class="tag_parola" data-parola="ciòco">ciòco</span>
       </div>
 
     </section>
@@ -191,7 +185,6 @@
           <div class="link_desc">Account Instagram</div>
         </a>
 
-        </a>
       </div>
 
     </section>
@@ -231,7 +224,7 @@
     </div>
 
   </footer>
+
+  <script src="/sito/js/main.js"></script>
 </body>
 </html>
-
-  
