@@ -185,11 +185,66 @@ parolePopolari.forEach(function (tag) {
 
 
 /* ------------------------------------------------------------
-   PAROLA DEL GIORNO (placeholder)
+   PAROLA DEL GIORNO (random dal database)
    ------------------------------------------------------------ */
 function parolaDelGiorno() {
-    // in futuro verrà presa dal database
-    console.log("Funzione parola del giorno pronta per il database.");
+    if (typeof dizionario === "undefined" || dizionario.length === 0) {
+        console.warn("Dizionario non caricato.");
+        return;
+    }
+
+    var indiceRandom = Math.floor(Math.random() * dizionario.length);
+    var parola = dizionario[indiceRandom];
+
+    // Aggiornamento elementi DOM
+    var elDialetto = document.getElementById("giornoDialetto");
+    var elCategoria = document.getElementById("giornoCategoria");
+    var elItaliano = document.getElementById("giornoItaliano");
+    var elEsDialetto = document.getElementById("giornoEsempioDialetto");
+    var elEsItaliano = document.getElementById("giornoEsempioItaliano");
+
+    if (elDialetto) elDialetto.innerText = parola.dialetto;
+    if (elCategoria) elCategoria.innerText = parola.categoria;
+    if (elItaliano) elItaliano.innerText = parola.italiano;
+
+    // Gestione esempio
+    if (parola.esempio && parola.esempio.trim() !== "") {
+        if (elEsDialetto) elEsDialetto.innerText = '"' + parola.esempio + '"';
+        if (elEsItaliano) elEsItaliano.style.display = "block";
+    } else {
+        if (elEsDialetto) elEsDialetto.innerText = "Esempio in fase di inserimento...";
+        if (elEsItaliano) elEsItaliano.style.display = "none";
+    }
 }
 
+
+/* ------------------------------------------------------------
+   STATISTICHE DINAMICHE
+   ------------------------------------------------------------ */
+function aggiornaStatistiche() {
+    if (typeof dizionario === "undefined" || dizionario.length === 0) return;
+
+    var totale = dizionario.length;
+    var sostantivi = dizionario.filter(function(p) { 
+        return ["sm", "sf", "smpl", "sfpl", "np"].indexOf(p.categoria) !== -1; 
+    }).length;
+    var verbi = dizionario.filter(function(p) { return p.categoria === "vb"; }).length;
+    var aggettivi = dizionario.filter(function(p) { return p.categoria === "agg"; }).length;
+    var avverbi = dizionario.filter(function(p) { return p.categoria === "avv"; }).length;
+    var espressioni = dizionario.filter(function(p) { 
+        return ["loc", "es"].indexOf(p.categoria) !== -1; 
+    }).length;
+
+    if (document.getElementById("statTotale")) document.getElementById("statTotale").innerText = totale.toLocaleString();
+    if (document.getElementById("statSostantivi")) document.getElementById("statSostantivi").innerText = sostantivi.toLocaleString();
+    if (document.getElementById("statVerbi")) document.getElementById("statVerbi").innerText = verbi.toLocaleString();
+    if (document.getElementById("statAggettivi")) document.getElementById("statAggettivi").innerText = aggettivi.toLocaleString();
+    if (document.getElementById("statAvverbi")) document.getElementById("statAvverbi").innerText = avverbi.toLocaleString();
+    if (document.getElementById("statEspressioni")) document.getElementById("statEspressioni").innerText = espressioni.toLocaleString();
+}
+
+
+// Inizializzazione al caricamento
 parolaDelGiorno();
+aggiornaStatistiche();
+
